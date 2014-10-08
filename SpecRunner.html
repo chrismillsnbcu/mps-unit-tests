@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>MPS Javascript Unit Tests</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.0.3/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.3/jasmine.css">
+
+  <script type="text/javascript" src="lib/jasmine-2.0.3/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.3/jasmine-html.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.3/boot.js"></script>
+
+  <!-- include source files here... -->
+
+  <script> var debugmode = {'log':1};
+        var mpscall = {
+          //'content_id':'test',
+          //'cat':'aaa|bbb',
+          'path':'TEST',
+          'site':'fandango-web'
+        }
+        var mpsopts={
+          'updatecorrelator':true,
+          //'catprefix':'abc',
+          'host':'local.devmps.com'
+          //'host':'devmps.com'
+        };
+        var mps=mps||{}; document.write('<scr'+'ipt id="mps-ext-load" src="http://'+mpsopts.host+'/fetch/ext/load-'+mpscall.site+'.js"></scr'+'ipt>');
+      </script>
+
+      <style>
+        #style-test,
+        #external-style-test {
+          background-color:rgb(255, 255, 255);
+          width:260px;
+          height:260px;
+          padding:20px;
+          margin:30px;
+        }
+        #btn-insert-ad {
+          padding:5px 10px;
+          background:#000;
+          color:#fff;
+          font-weight:bold;
+          width:100px;
+          margin:0 0 20px 0;
+        }
+      </style>
+
+</head>
+
+<body>
+
+  <div id="append-html"></div>
+
+  <div id="append-html-multi"></div>
+
+  <div id="append-html-js"></div>
+
+  <div id="append-html-table"></div>
+
+  <div id="append-html-form"></div>
+
+  <div id="append-html-escaped"></div>
+
+  <div id="insert-ad"></div>
+
+  <div id="style-test">Stylesheet test.</div>
+
+  <div id="external-style-test">External stylesheet test.</div>
+
+  <div id="external-js"></div>
+
+  <button id="btn-insert-ad">Insert Ad</button>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="spec/mps_spec.js"></script>
+
+</body>
+</html>
