@@ -135,3 +135,40 @@ describe("create and _append() external script to head", function() {
   });
 
 });
+
+// Test #10: _append skyscraperad ad with getAd
+describe("10 _append skyscraperad ad with getAd", function() {
+  mps.gptloadCallback = {};
+  beforeEach(function() {
+    mps.makeRequest();
+  });
+  it("_append skyscraperad ad with getAd()", function(){
+    // call _append inside gptloadCallback
+    mps.gptloadCallback = function() {
+      mps._append(mps._select('#append-ad'), mps.getAd('skyscraperad'));
+    };
+    // expected results
+    var elem = document.getElementById('append-ad').innerHTML;
+    expect(elem).not.toBeNull();
+  });
+  afterEach(function() {
+    mps.makeRequest('more');
+  });
+});
+
+// Test #11: _append topbanner using insertAd
+describe("11 _append topbanner using insertAd", function() {
+  beforeEach(function() {
+    mps.makeRequest();
+  });
+  it("12 _append using insertAd", function(){
+    // call _append
+    mps.gptloadCallback = function() {
+      mps.insertAd(mps._select('#append-topbanner-ad'),'topbanner')
+    };
+    // expected results
+    var elem = document.getElementById('append-topbanner-ad').innerHTML;
+    expect(elem).not.toBeNull();
+
+  });
+});
