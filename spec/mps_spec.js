@@ -152,7 +152,6 @@ describe("10 _append skyscraperad ad with getAd", function() {
     expect(elem).not.toBeNull();
   });
   afterEach(function() {
-    mps.makeRequest('more');
   });
 });
 
