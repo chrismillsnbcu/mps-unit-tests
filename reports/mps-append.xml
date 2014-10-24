@@ -1,0 +1,29 @@
+[mps/JS] LOADED: Common
+******* [mps] Debug Mode ON (1) *******
+#mpsTimer• /started/ 1414172729632
+[mps/Loader] mpsRequestParams()
+[mps/Loader] EXECUTE mpsDeriveParams()
+[mps/Loader] (derived params) {"cat":"TEST"}
+[mps/Loader] (merge params) [object Object]
+[mps/Loader] (mpsopts) {"updatecorrelator":true,"host":"local.devmps.com","callback":"mpsCallback","catprefix":"","deriveparams":{"1":"cat1","2":"cat2","3":"cat3","4":"cat4","5":"cat5","6":"cat6"},"deriveoff":false,"maxcats":6,"maxpathsegs":4,"subset":false,"skipheader":0}
+[mps/Loader] (mpscall) {
+  "cat": "TEST",
+  "path": "TEST",
+  "site": "fandango-web"
+}
+[mps/Loader] mpsRequestUrl(): local.devmps.com/request/page/jsonp?CALLBACK=mpsCallback&cat=TEST&path=TEST&site=fandango-web&CACHESKIP=1&NOLOAD=mpstools
+[mps/Loader] REQUEST+LOAD JSONP http://local.devmps.com/request/page/jsonp?CALLBACK=mpsCallback&cat=TEST&path=TEST&site=fandango-web&CACHESKIP=1&NOLOAD=mpstools
+[mps/Loader] JSONP Callback Execution #mpsTimer•58ms
+[mps/Loader] MPS Response [object Object]
+[mps/Loader] NO JQUERY (using native js)
+Error loading resource file://www.nbcudigitaladops.com/hosted/global_header.js (302). Details: Request for opening non-local file file://www.nbcudigitaladops.com/hosted/global_header.js
+--[executed]--> MPS Head Additions (1)
+[mps/JS] LOADED: Responsive
+[mps:GPT] INIT: gpt-asynchronous #mpsTimer•60ms
+[mps/JS] LOADED: Refresh
+[mps/JS] LOADED: Rails
+[mps:component:Responsive] TRIGGERED mps.__setResponsiveAds #mpsTimer•65ms
+--[executed]--> MPS Header Additions (2)
+ReferenceError: Can't find variable: describe
+
+  file:///Users/rajkowskiruben/Dropbox/mps-LABS/mps-unit-tests/spec/mps_spec_v2.js:19

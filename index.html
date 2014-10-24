@@ -10,6 +10,7 @@
   <script type="text/javascript" src="lib/jasmine-2.0.3/jasmine.js"></script>
   <script type="text/javascript" src="lib/jasmine-2.0.3/jasmine-html.js"></script>
   <script type="text/javascript" src="lib/jasmine-2.0.3/boot.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.3/console-runner.js"></script>
 
   <!-- include source files here... -->
 
@@ -79,6 +80,11 @@
 
   <!-- include spec files here... -->
   <script type="text/javascript" src="spec/mps_spec.js"></script>
-
+  <script type="text/javascript">
+      var console_reporter = new jasmine.ConsoleReporter();
+      jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+      jasmine.getEnv().addReporter(console_reporter);
+      jasmine.getEnv().execute();
+  </script>
 </body>
 </html>
