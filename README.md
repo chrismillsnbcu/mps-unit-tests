@@ -1,8 +1,8 @@
 mps-unit-tests
 ==============
 
-1. Install Node.js (binary) 
-2. Install Phantom.js (binary) 
+1. Install Node.js (binary) [http://nodejs.org/]
+2. Install Phantom.js (binary)  [http://phantomjs.org/]
 3. Run <code>npm install mocha-phantomjs --save-dev</code> github[https://www.npmjs.org/package/mocha-phantomjs]
 4. Run <code>npm install mocha --save-dev</code> github[https://github.com/mochajs/mocha]
 5. Install sonar reoprter: Run <code>npm install xunit-file --save-dev</code>  github [https://github.com/peerigon/xunit-file]
