@@ -10,28 +10,27 @@
   <!-- SOURCE FILES -->
     <script> var debugmode = {'log':1};
     var mpscall = {
-        //'content_id':'test',
-        //'cat':'aaa|bbb',
         'path':'TEST',
         'site':'fandango-web'
     }
     var mpsopts={
-        'updatecorrelator':true,
-        //'catprefix':'abc',
-        'host':'local.devmps.com'
-        //'host':'devmps.com'
+        'updatecorrelator':true
     };
     var mps=mps||{};
     </script>
-    <script type="text/javascript" src="http://local.devmps.com/fetch/ext/load-fandango-web.js"></script>
+    <script type="text/javascript" src="http://local.devmps.com/fetch/ext/load-fandango-web.js?path=TEST"></script>
     <script>
         mocha.ui('bdd');
         mocha.reporter('html');
         var expect = chai.expect;
     </script>
     <script>
+
+        mps._ready(function(){
         if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
         else { mocha.run(); }
+        });
+
     </script>
     <!-- TEST FILES -->
     <script type="text/javascript" src="spec/mps_spec_v2.js"></script>
@@ -63,9 +62,9 @@
 <div id="append-ad">Append Skyscraperad Ad</div>
 <div id="append-topbanner-ad">Append Topbanner Ad</div>
 <br/><br/>
-
-
-
+<br/><br/>
+<div id="mocha"></div>
+<div id="mocha-error">%s</div>
 </body>
 </html>
 
