@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "devDependencies": {
     "chai": "*",
-    "grunt": "^0.4.5",
     "mocha": "*",
+    "mocha-lcov-reporter": "0.0.1",
     "xunit-file": "0.0.5"
   }
 }
