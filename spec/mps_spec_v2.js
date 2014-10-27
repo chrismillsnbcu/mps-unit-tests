@@ -141,7 +141,7 @@ describe("MPS core _append tests", function (done) {
     }, 100 );
   });
 
-  it("Append skyscraperad ad with getAd() and insertAd()", function(){
+  it("Append two ad with getAd() and insertAd()", function(){
     // call _append inside gptloadCallback
     mps.makeRequest();
     mps.gptloadCallback = {};
