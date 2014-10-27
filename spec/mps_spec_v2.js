@@ -146,7 +146,7 @@ describe("MPS core _append tests", function (done) {
     mps.makeRequest();
     mps.gptloadCallback = {};
     mps.gptloadCallback = function() {
-      mps._append(mps._select('#append-ad'), mps.getAd('skyscraperad'));
+      mps._append(mps._select('#append-ad'), mps.getAd('boxad'));
       mps.insertAd(mps._select('#insert-ad'),'topbanner');
     };
     // expected results
