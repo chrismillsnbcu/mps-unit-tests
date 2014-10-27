@@ -8,7 +8,7 @@
     <script src="node_modules/chai/chai.js"></script>
 
   <!-- SOURCE FILES -->
-    <script> var debugmode = {'log':1};
+    <script> var debugmode = {'log':0};
     var mpscall = {
         'path':'TEST',
         'site':'fandango-web'
@@ -36,30 +36,19 @@
 </head>
 
 <body>
-
-<div id="append-html"></div>
-
-<div id="append-html-multi"></div>
-
-<div id="append-html-js"></div>
-
-<div id="append-html-table"></div>
-
-<div id="append-html-form"></div>
-
-<div id="append-html-escaped"></div>
-
-<div id="insert-ad"></div>
-
-<div id="style-test">Stylesheet test.</div>
-
-<div id="external-style-test">External stylesheet test.</div>
-
-<div id="external-js"></div>
-
-
-<div id="append-ad">Append Skyscraperad Ad</div>
-<div id="append-topbanner-ad">Append Topbanner Ad</div>
+<div id="mocha-tests" style="padding: 15px; border: 1px dotted; width: 730px; margin: 15px;">
+    <div id="append-html"></div>
+    <div id="append-html-multi"></div>
+    <div id="append-html-js"></div>
+    <div id="append-html-table"></div>
+    <div id="append-html-form"></div>
+    <div id="append-html-escaped"></div>
+    <div id="style-test">Stylesheet test.</div>
+    <div id="external-style-test">External stylesheet test.</div>
+    <div id="external-js"></div>
+    <div id="append-ad">Append Skyscraperad Ad</div>
+    <div id="insert-ad">Append Topbanner Ad</div>
+</div>
 <br/><br/>
 <br/><br/>
 <div id="mocha"></div>

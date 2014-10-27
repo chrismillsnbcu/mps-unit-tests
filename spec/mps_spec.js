@@ -163,7 +163,7 @@ describe("Create _append topbanner using insertAd", function() {
   it("12 _append using insertAd", function(){
     // call _append
     mps.gptloadCallback = function() {
-      mps.insertAd(mps._select('#append-topbanner-ad'),'topbanner')
+      mps.insertAd(mps._select('#append-topbanner-ad'),'topbanner');
     };
     // expected results
     var elem = document.getElementById('append-topbanner-ad').innerHTML;
