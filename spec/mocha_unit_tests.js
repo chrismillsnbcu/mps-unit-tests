@@ -21,7 +21,7 @@ describe("MPS core _append tests", function (done) {
         expect(check).to.be.a(str);
         done();    // success:
       } catch(e) {
-        console.log('There was an error running the test'); //failure
+        console.log('Running anyncronous test...'); //failure
       }
     }, 100 );
   });
@@ -38,7 +38,7 @@ describe("MPS core _append tests", function (done) {
         expect(a).to.be.true;
         done();    // success:
       } catch(e) {
-        console.log('There was an error running the test'); //failure
+        console.log('Running anyncronous test...'); //failure
       }
     }, 100 );
   });
@@ -56,7 +56,7 @@ describe("MPS core _append tests", function (done) {
         expect(elem.firstChild.lastChild.nodeType).to.be(3);
         done();    // success:
       } catch(e) {
-        console.log('There was an error running the test'); //failure
+        console.log('Running anyncronous test...'); //failure
       }
     }, 100 );
   });
@@ -72,7 +72,7 @@ describe("MPS core _append tests", function (done) {
         expect(b).to.be.true;
         done();
       } catch(e) {
-        console.log('There was an error running the test'); //failure
+        console.log('Running anyncronous test...'); //failure
       }
     }, 100 );
   });
@@ -103,7 +103,7 @@ describe("MPS core _append tests", function (done) {
         expect(bg).to.equal('rgb(255, 255, 255)');
         done();
       } catch(e) {
-        console.log('There was an error running the test'); //failure
+        console.log('Running anyncronous test...'); //failure
       }
     }, 100 );
     // Append stylesheet and check it is applied.
@@ -122,7 +122,7 @@ describe("MPS core _append tests", function (done) {
       expect(document.getElementById('external-stylesheet')).not.to.be(null);
       done();
       } catch(e) {
-        console.log('There was an error running the test'); //failure
+        console.log('Running anyncronous test...'); //failure
       }
     }, 100 );
   });
@@ -136,7 +136,7 @@ describe("MPS core _append tests", function (done) {
         expect(document.getElementById('external-script')).not.to.be(null);
         done();
       } catch(e) {
-        console.log('There was an error running the test'); //failure
+        console.log('Running anyncronous test...'); //failure
       }
     }, 100 );
   });
@@ -158,11 +158,8 @@ describe("MPS core _append tests", function (done) {
         expect(elem2).not.to.be(null);
         done();
       } catch(e) {
-        console.log('There was an error running the test'); //failure
+        console.log('Running anyncronous test...'); //failure
       }
     }, 100 );
-
   });
-
-
 });  // end describe

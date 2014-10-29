@@ -1,5 +1,12 @@
 module.exports = function(grunt) {
 
+  // Run the grunt tasks.
+  grunt.loadNpmTasks('grunt-phantom');
+  grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-blanket');
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -11,20 +18,14 @@ module.exports = function(grunt) {
         //src: 'spec/<%= pkg.name %>.js',
         //dest: 'reports/<%= pkg.name %>min.js'
      //}
-    }
-  });
-
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  //grunt.registerTask('default', ['uglify']);
-
-  // Add the grunt-mocha-test tasks.
-  grunt.loadNpmTasks('grunt-mocha-test');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-blanket');
-
-  grunt.initConfig({
+    },
+    phantom: {
+      options: {
+        port: 4444
+      },
+      your_target: {
+      }
+    },
     clean: {
       coverage: {
         src: ['coverage/']
@@ -47,30 +48,31 @@ module.exports = function(grunt) {
       test: {
         options: {
           reporter: 'xunit',
-          // Require blanket wrapper for code coverage
-          //require: 'coverage/blanket',
-          captureFile: 'reports/grunt-mocha-test.xml', // output the reporter to a file
-          quiet: false, // suppress output to standard out (defaults to false)
-          src: ['/coverage/spec/**/*.js']
+          // output the reporter to a file
+          captureFile: 'reports/grunt-mocha-test.xml',
+          src: ['spec/mocha_unit_tsts.js']
         },
         coverage: {
           options: {
             reporter: 'html-cov',
-            // use the quiet flag to suppress the mocha console output
-            quiet: false,
+            //quit flag suppress output to standard out
+            quiet: true,
             // specify a destination for output
-            captureFile: 'coverage/grunt-mocha-test.html'
+            captureFile: 'reports/code-coverage.html'
           }
         },
         'travis-cov': {
           options: {
             reporter: 'travis-cov'
           },
-          src: ['/coverage/spec/**/*.js']
+          src: ['coverage/spec/*.js']
         }
       }
     }
   });
-  grunt.registerTask('default', ['clean', 'blanket', 'copy', 'mochaTest']);
+
+  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['phantom', 'clean', 'blanket', 'copy', 'mochaTest']);
+
 
 };
