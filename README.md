@@ -1,5 +1,8 @@
 mps-unit-tests
 ==============
+MochaJS + PhantomJS + LCOV (node/grunt/blanket)
+_______________________________________________
+
 
 1. Install Node.js (binary) [http://nodejs.org/]
 2. Install Phantom.js (binary)  [http://phantomjs.org/]
