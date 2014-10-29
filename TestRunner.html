@@ -6,20 +6,23 @@
     <link rel="stylesheet" href="node_modules/mocha/mocha.css" />
     <script src="node_modules/mocha/mocha.js"></script>
     <script src="node_modules/chai/chai.js"></script>
+    <script src="node_modules/chai-spies/chai-spies.js"></script>
 
   <!-- SOURCE FILES -->
     <script> var debugmode = {'log':0};
+    debugmode.log = false;
     var mpscall = {
         'path':'TEST',
         'site':'fandango-web'
     }
     var mpsopts={
         'updatecorrelator':true,
-        'host': "local.devmps.com"
+        'host': 'local.devmps.com'
+        //'host': 'local.devmps.com'
     };
     var mps=mps||{};
     </script>
-    <script type="text/javascript" src="http://dev-mps.nbcuni.com/fetch/ext/load-fandango-web.js?path=TEST"></script>
+    <script type="text/javascript" src="http://local.devmps.com/fetch/ext/load-fandango-web.js?path=TEST"></script>
     <script>
         mocha.ui('bdd');
         mocha.reporter('html');

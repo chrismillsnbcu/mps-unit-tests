@@ -1,11 +1,32 @@
 {
-  "name": "project",
+  "name": "mocha_unit_tests",
   "description": "mocha unit tests",
   "version": "0.0.1",
+  "author": "Ruben Rajkowski <ruben.rajkowski@nbcuni.com>",
+  "contributors": [
+    {
+      "name": "Chris Mills",
+      "email": "chris.mills@nbcuni.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrismillsnbcu/mps-unit-tests.git"
+  },
   "devDependencies": {
-    "chai": "*",
-    "mocha": "*",
+    "blanket": "^1.1.6",
+    "chai": "^1.9.2",
+    "chai-spies": "^0.5.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-mocha-test": "^0.12.2",
+    "mocha": "^2.0.1",
     "mocha-lcov-reporter": "0.0.1",
+    "mocha-phantom-coverage-reporter": "^0.1.0",
+    "mocha-sonar-reporter": "^0.1.0",
     "xunit-file": "0.0.5"
+  },
+  "scripts": {
+    "test": "make all"
   }
 }
