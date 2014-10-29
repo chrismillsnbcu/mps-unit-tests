@@ -50,7 +50,8 @@ module.exports = function(grunt) {
           // Require blanket wrapper for code coverage
           //require: 'coverage/blanket',
           captureFile: 'reports/grunt-mocha-test.xml', // output the reporter to a file
-          quiet: false // suppress output to standard out (defaults to false)
+          quiet: false, // suppress output to standard out (defaults to false)
+          src: ['/coverage/spec/**/*.js']
         },
         coverage: {
           options: {
@@ -66,8 +67,7 @@ module.exports = function(grunt) {
             reporter: 'travis-cov'
           },
           src: ['/coverage/spec/**/*.js']
-        },
-        src: ['spec/Person.js']
+        }
       }
     }
   });
