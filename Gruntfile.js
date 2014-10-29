@@ -16,14 +16,32 @@ module.exports = function(grunt) {
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  //grunt.registerTask('default', ['uglify']);
 
   // Add the grunt-mocha-test tasks.
   grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-blanket');
 
   grunt.initConfig({
+    clean: {
+      coverage: {
+        src: ['coverage/']
+      }
+    },
+    copy: {
+      coverage: {
+        src: ['spec/**'],
+        dest: 'coverage/'
+      }
+    },
+    blanket: {
+      coverage: {
+        src: ['spec/'],
+        dest: 'coverage/spec/'
+      }
+    },
     // Configure a mochaTest task
     mochaTest: {
       test: {
@@ -40,13 +58,19 @@ module.exports = function(grunt) {
             // use the quiet flag to suppress the mocha console output
             quiet: false,
             // specify a destination for output
-            captureFile: 'coverage/coverage.html'
+            captureFile: 'coverage/grunt-mocha-test.html'
           }
         },
-        src: ['spec/mocha.js']
+        'travis-cov': {
+          options: {
+            reporter: 'travis-cov'
+          },
+          src: ['/coverage/spec/**/*.js']
+        },
+        src: ['spec/Person.js']
       }
     }
   });
-  grunt.registerTask('default', 'mochaTest');
+  grunt.registerTask('default', ['clean', 'blanket', 'copy', 'mochaTest']);
 
 };
