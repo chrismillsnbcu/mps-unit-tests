@@ -1,6 +1,12 @@
-<testsuite name="Mocha Tests" tests="4" failures="0" errors="0" skipped="0" timestamp="Fri, 24 Oct 2014 17:58:51 GMT" time="0.005">
-<testcase classname="DOM Tests" name="is in the DOM" time="0.001"/>
-<testcase classname="DOM Tests" name="is a child of the body" time="0"/>
-<testcase classname="DOM Tests" name="has the right text" time="0"/>
-<testcase classname="DOM Tests" name="has the right background" time="0"/>
-</testsuite>
+[31m>> [39mMocha exploded!
+[31m>> [39mReferenceError: document is not defined[31m
+>> [39m    at Suite.<anonymous> (/Users/rajkowskiruben/Dropbox/mps-LABS/mps-unit-tests/spec/mocha.js:2:12)[31m
+>> [39m    at context.describe.context.context (/Users/rajkowskiruben/Dropbox/mps-LABS/mps-unit-tests/node_modules/mocha/lib/interfaces/bdd.js:74:10)[31m
+>> [39m    at Object.<anonymous> (/Users/rajkowskiruben/Dropbox/mps-LABS/mps-unit-tests/spec/mocha.js:1:63)[31m
+>> [39m    at Module._compile (module.js:456:26)[31m
+>> [39m    at Object.Module._extensions..js (module.js:474:10)[31m
+>> [39m    at Module.load (module.js:356:32)[31m
+>> [39m    at Function.Module._load (module.js:312:12)[31m
+>> [39m    at Module.require (module.js:364:17)[31m
+>> [39m    at require (module.js:380:17)[31m
+>> [39m    at /Users/rajkowskiruben/Dropbox/mps-LABS/mps-unit-tests/node_modules/mocha/lib/mocha.js:184:27

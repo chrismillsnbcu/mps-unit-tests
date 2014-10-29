@@ -163,3 +163,29 @@ describe("MPS core _append tests", function (done) {
     }, 100 );
   });
 });  // end describe
+
+
+describe("MPS core _remove tests", function (done) {
+
+  // Remove elem by id.
+  it("Remove elements by id", function() {
+    mps._remove('#removeId');
+    var check = document.querySelectorAll('#removeId'), i;
+    expect(check.length).to.equal(0);
+  });
+
+  // Remove elem by class.
+  it("Remove elements by className", function() {
+    mps._remove('.removeClass');
+    var check = document.querySelectorAll('.removeClass'), i;
+    expect(check.length).to.equal(0);
+  });
+
+  // Remove elem by class.
+  it("Remove elements by tag name", function() {
+    mps._remove('span');
+    var check = document.querySelectorAll('span'), i;
+    expect(check.length).to.equal(0);
+  });
+
+});

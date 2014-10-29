@@ -1,29 +1,14 @@
 module.exports = function(grunt) {
 
-  // Run the grunt tasks.
-  grunt.loadNpmTasks('grunt-phantom');
-  grunt.loadNpmTasks('grunt-mocha-test');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-blanket');
-
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      }
-      //build: {
-        //src: 'spec/<%= pkg.name %>.js',
-        //dest: 'reports/<%= pkg.name %>min.js'
-     //}
-    },
+
     phantom: {
       options: {
         port: 4444
       },
-      your_target: {
+      cucumber: {
       }
     },
     clean: {
@@ -33,7 +18,7 @@ module.exports = function(grunt) {
     },
     copy: {
       coverage: {
-        src: ['spec/**'],
+        src: ['spec*'],
         dest: 'coverage/'
       }
     },
@@ -65,13 +50,31 @@ module.exports = function(grunt) {
           options: {
             reporter: 'travis-cov'
           },
-          src: ['coverage/spec/*.js']
+          src: ['coverage/spec.js']
         }
       }
     }
+    // Configure simple mochaTest task
+    /*mochaTest: {
+      test: {
+        options: {
+          reporter: 'xunit',
+          captureFile: 'reports/mocha-test.xml', // Optionally capture the reporter output to a file
+          quiet: false // Optionally suppress output to standard out (defaults to false)
+        },
+        src: ['spec/mocha.js']
+      }
+    }*/
   });
+  // Run the grunt tasks.
+  grunt.loadNpmTasks('grunt-phantom');
+  grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-blanket');
 
-  grunt.registerTask('default', ['uglify']);
+
+  //grunt.registerTask('default', [ 'phantom', 'mochaTest']);
   grunt.registerTask('default', ['phantom', 'clean', 'blanket', 'copy', 'mochaTest']);
 
 

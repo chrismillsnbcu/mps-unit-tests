@@ -4,6 +4,34 @@
 <head>
   <title>Mocha Test Runner</title>
     <link rel="stylesheet" href="node_modules/mocha/mocha.css" />
+
+    <style type="text/css">
+        #removeId {
+            display:block;
+            padding:25px 0;
+            background:#f0f0f0;
+        }
+        .removeClass {
+            display:inline-block;
+            padding:50px 10px;
+            background:#666;
+            color:#fff;
+            text-align:center;
+            width:220px;
+            margin:0 0 10px 0;
+        }
+        #mocha-remove-tests {
+            background:#000;
+        }
+        .mocha-remove-buttons {
+            display:block;
+        }
+        .mocha-remove-buttons
+        button {
+            font-size:16px;
+        }
+    </style>
+
     <script src="node_modules/mocha/mocha.js"></script>
     <script src="node_modules/chai/chai.js"></script>
     <script src="node_modules/chai-spies/chai-spies.js"></script>
@@ -40,7 +68,8 @@
 </head>
 
 <body>
-<div id="mocha-tests" style="padding: 15px; border: 1px dotted; width: 730px; margin: 15px;">
+<h1>mps._append</h1>
+<div id="mocha-tests" class="mocha-tests">
     <div id="append-html"></div>
     <div id="append-html-multi"></div>
     <div id="append-html-js"></div>
@@ -53,10 +82,30 @@
     <div id="append-ad">Append Skyscraperad Ad</div>
     <div id="insert-ad">Append Topbanner Ad</div>
 </div>
-<br/><br/>
-<br/><br/>
+<br />
+
+<h1>mps._remove</h1>
+<div id="mocha-remove-tests" class="mocha-tests">
+    <div class="removeClass">Div with className removeClass</div>
+    <div class="removeClass">Div with className removeClass</div>
+    <div class="removeClass">Div with className removeClass</div>
+    <div id="removeId">Div with ID removeId</div>
+    <span>Span tag.</span>
+    <span>Span tag.</span>
+    <span>Span tag.</span>
+    <span>Span tag.</span>
+
+</div>
+<div class="mocha-manual-tests">
+    <h2>Manual mps._remove tests</h2>
+    <button onclick="mps._remove('style');">Remove mps._remove box inline styles (background color on mps._remove container) </button><br />
+    <button onclick="mps._remove('link');">Remove mps._remove all external page styles.</button><br />
+    <button onclick="mps._remove('script');">Remove all page scripts.</button>
+</div>
+<br />
 <div id="mocha"></div>
 <div id="mocha-error"></div>
+
 </body>
 </html>
 
