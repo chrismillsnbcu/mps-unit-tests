@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     mochaTest: {
       test: {
         options: {
-          reporter: 'spec',
+          reporter: 'xunit',
           // Require blanket wrapper for code coverage
           //require: 'coverage/blanket',
           captureFile: 'reports/grunt-mocha-test.xml', // output the reporter to a file
