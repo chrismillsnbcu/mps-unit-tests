@@ -12,5 +12,5 @@ _______________________________________________
 5. Install sonar reoprter: Run <code>npm install xunit-file --save-dev</code>  github [https://github.com/peerigon/xunit-file]
 6. All JS tests are: /spec/*.js
 7. All Sonar Coverage Xml reports are: /reports/*.xml
-8. Run tests from cli: <code> mocha-phantomjs -R spec testRunner.html</code>
-9. Export tests to reports folder: <code> mocha-phantomjs -R xunit testRunner.html > reports/mocha.xml</code>
+8. Run tests from cli: <code> mocha-phantomjs -R spec TestRunner.html</code>
+9. Export tests to reports folder: <code> mocha-phantomjs -R xunit TestRunner.html > reports/mocha.xml</code>
