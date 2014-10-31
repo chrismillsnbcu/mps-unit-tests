@@ -3,7 +3,13 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
+    watch:{
+      files: ['spec/*.js'],
+      tasks: ['mochaTest:all'],
+      options: {
+        spawn: true
+      }
+    },
     phantom: {
       options: {
         port: 4444
@@ -35,7 +41,7 @@ module.exports = function(grunt) {
           reporter: 'xunit',
           // output the reporter to a file
           captureFile: 'reports/grunt-mocha-test.xml',
-          src: ['spec/mocha_unit_tsts.js']
+          src: ['spec/*.js']
         },
         coverage: {
           options: {
@@ -43,7 +49,7 @@ module.exports = function(grunt) {
             //quit flag suppress output to standard out
             quiet: true,
             // specify a destination for output
-            captureFile: 'reports/code-coverage.html'
+            captureFile: 'coverage/code-coverage.html'
           }
         },
         'travis-cov': {
@@ -71,8 +77,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-blanket');
-
 
   //grunt.registerTask('default', [ 'phantom', 'mochaTest']);
   grunt.registerTask('default', ['phantom', 'clean', 'blanket', 'copy', 'mochaTest']);
